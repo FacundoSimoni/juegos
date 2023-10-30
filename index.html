@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
- <h1>js</h1>
-
-
-
-
-//JS    
-    <script src="main.js"></script>  
+  <main>
+    <section class="galeria">
+      <div class="imagen">
+        <img src="imagenes/GTAV.jpg" alt="caratula juego GTAV" data-precio="49.99" onclick="seleccionarImagen(this)">
+      </div>
+      <div class="imagen">
+        <img src="imagenes/kakarot.jpg" alt="caratula juego Kakarot" data-precio="39.99" onclick="seleccionarImagen(this)">
+      </div>
+      <div class="imagen">
+        <img src="imagenes/2024.jpg" alt="caratula juego fc 2024" data-precio="20.99" onclick="seleccionarImagen(this)">
+      </div>
+      <div class="imagen">
+        <img src="imagenes/2077.jpg" alt="caratula juego 2077" data-precio="10.99" onclick="seleccionarImagen(this)">
+      </div>
+      <div class="imagen">
+        <img src="imagenes//godofwar.jpg" alt="caratula juego godofwar" data-precio="18.99" onclick="seleccionarImagen(this)">
+      </div>
+      <div class="imagen">
+        <img src="imagenes/hp.jpg" alt="caratula juego Howarts" data-precio="10.99" onclick="seleccionarImagen(this)">
+      </div>
+    </section>
+    <section class="carrito">
+      <h2>Carrito de Compra</h2>
+      <ul id="carrito-lista">
+      
+      </ul>
+      <p>Total: $<span id="total">0.00</span></p>
+    </section>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
+
+    

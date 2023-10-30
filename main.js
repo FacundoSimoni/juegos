@@ -1,99 +1,30 @@
-let entrada = prompt ("Juegos de PSP/Xbox/Compu");
+var carrito = [];
 
-while (entrada != "ESC") {
-    console.log ("Que juego desea buscar?" + entrada); 
+function seleccionarImagen(imagen) {
+  var precio = parseFloat(imagen.getAttribute("data-precio") );
+  var nombre = imagen.alt;
 
-    entrada = prompt ("que juego busca?")
-
-    entrada = prompt ("Este juego tiene un valor de $1000, quiere adquirilo?")
-
-    entrada = prompt ("Desea algo mas?")
-
-    entrada = prompt ("Muchas gracias!")
-
+  if (carrito.findIndex(item => item.nombre === nombre) === -1) {
+    carrito.push({ nombre, precio });
+    actualizarCarrito();
+  }
 }
 
-let unNumero = 232
+function actualizarCarrito() {
+  var carritoLista = document.getElementById("carrito-lista");
+  var total = document.getElementById("total");
+  var totalPrecio = 0;
 
-if (unNumero == 232){
-    console.log("vas a ver este mensaje");
+  carritoLista.innerHTML = "";
+  carrito.forEach(item => {
+    var listItem = document.createElement("li");
+    listItem.textContent = `${item.nombre} - $${item.precio.toFixed(2)}`;
+    carritoLista.appendChild(listItem);
+    totalPrecio += item.precio;
+  });
+
+  total.textContent = totalPrecio.toFixed(2);
 }
-
-if (unNumero == 323){
-    console.log ("no vas a ver este mensaje");
-}
-
-//Functions
-function solicitarDatos() {
-    let datosIngresados = prompt("Ingrear dato");
-    alert("El dato ingresado es" + datoIngresado);
-
-    solicitarNombre();
-    solicitarApellido();
-    solicitarGmail();
-    solicitarContraseña(); 
-
-}
-
-
-// OBJETOS
-
-let accion = {
-    nombre: 'Call of duty',
-    lanzamiento: 'nomviembre de 2015',
-    valor: '$2000',
-}
-
-let deportes = {
-    nombre: 'NBA 2023',
-    lanzamiento: 'octubre de 2023',
-    valor: '$4000'
-}
-
-//OBJETOS VALORES
-
-console.log(accion['nombre'])
-console.log(accion['lanzamiento'])
-console.log(accion['valor'])
-
-console.log(deportes['nombre'])
-console.log(deportes['lanzamiento'])
-console.log(deportes['valor'])
-
-let prompt = ('¿Que busca?');
-console.log(accion[prop]);
-console.log(deportes[prop])
-
-//ARRAYS
-
-let juegos = ['FIFA23', 'NBA2K23', 'Call Of Duty', 'God of War', 'Black'];
-console.log(juegos);
-
-//ACCESO A VALORES
-
-console.log(juegos[0])
-console.log(juegos[2])
-console.log(juegos[4])
-
-//Recorrido
-
-console.log('Recorrido: ');
-
-for(let index = 0; index < 5; index++){
-    console.log(juegos[index]);
-} 
-
-//Metodos
-
-const videoJuegos = ["God Of War", "Black", "EA24"]
-
-videoJuegos.unshift('NBA2K24')
-
-console.log(videoJuegos)
-
-
-
-
 
 
 
